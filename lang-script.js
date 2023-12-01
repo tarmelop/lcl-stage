@@ -26,20 +26,22 @@ $(document).ready(function() {
   });
 });
 
-Transifex.live.onTranslatePage(function(language_code) {
-  var new_lang = Transifex.live.getSelectedLanguageCode();
+ 
 
-  if (new_lang) {
-    $(".youtube-iframe").attr("tr-lang", new_lang);
+// Transifex.live.onTranslatePage(function(language_code) {
+//   var new_lang = Transifex.live.getSelectedLanguageCode();
 
-    if (supported_lang.indexOf(new_lang.substr(0,2)) != -1) {
-      // add new language
-      $('.youtube-iframe').attr('src', function(i, val){
-        // remove last lang if exists
-        val = val.replace(/&hl=.*/, '').replace(/&cc_lang_pref=.*/, '');
+//   if (new_lang) {
+//     $(".youtube-iframe").attr("tr-lang", new_lang);
 
-        return val + '&hl=' + new_lang + '&cc_lang_pref=' + new_lang;
-      });
-    }
-  }
-});
+//     if (supported_lang.indexOf(new_lang.substr(0,2)) != -1) {
+//       // add new language
+//       $('.youtube-iframe').attr('src', function(i, val){
+//         // remove last lang if exists
+//         val = val.replace(/&hl=.*/, '').replace(/&cc_lang_pref=.*/, '');
+
+//         return val + '&hl=' + new_lang + '&cc_lang_pref=' + new_lang;
+//       });
+//     }
+//   }  
+// });
